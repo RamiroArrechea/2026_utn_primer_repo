@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css"> 
+</head>
+<body>
+    <div class="formulario"> 
+        <h1>Registro de usuarios</h1>
+        <form>
+            <div>
+                <label for="Fullname">Nombre completo:</label>
+                <input 
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="nombre completo" required
+                    maxlength="10"
+                    minlength="3"/>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" 
+                    id="email" 
+                    name="email"
+                    placeholder="ejemplo@gmail.com" required />
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required/>
+            </div>
+            
+            <br><!---ESPACIO-->
+            <div>
+                <span>Seleccione su lenguaje favorito</span>
+                <div>
+                    <input type="radio" name="lenguaje_favorito" id="html">
+                    <label for="html">HTML</label>                    
+                </div>
+                <div>
+                    <input type="radio" name="lenguaje_favorito" id="css">
+                    <label for="css">CSS</label>                    
+                </div>
+                <div>
+                    <input type="radio" name="lenguaje_favorito" id="js">
+                    <label for="js">JS</label>                    
+                </div>
+            </div>
+
+            <br><!---ESPACIO-->            
+            <div>
+                <span>Seleccione los lenguajes conocidos</span>
+                <div>
+                    <input type="checkbox" name="lenguaje_conocido" id="know_html">
+                    <label for="html">HTML</label>                    
+                </div>
+                <div>
+                    <input type="checkbox" name="lenguaje_conocido" id="know_css">
+                    <label for="css">CSS</label>                    
+                </div>
+                <div>
+                    <input type="checkbox" name="lenguaje_conocido" id="know_js">
+                    <label for="js">JS</label>                    
+                </div>
+            </div>
+            
+            <br><!---ESPACIO-->
+            <div>
+                <label for="pais">Elige tu pais de origen:</label>
+                <select id="pais" name="pais">
+                    <option value="ar">Argentina</option>
+                    <option value="fr">Francia</option>
+                    <option value="br">Brasil</option>
+                    <option value="no" selected disabled>No seleccionado</option>
+                </select>
+            </div>
+            
+            <br><!---ESPACIO-->
+            <div>
+                <label>Dejanos algun comentario:</label>
+                <br><!---ESPACIO-->
+                <textarea
+                    id="comentario"
+                    name="comentario"
+                    placeholder="hola estoy en html"
+                    rows="10"
+                    cols="30"
+                    maxlength="300">
+                </textarea>
+
+            </div>
+            
+            <br><!---ESPACIO-->
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    
+    <!-- BOTON VOLVER-->
+    <h3>VOLVER: </h2>   
+    <a href="./index.html">Volver a la pagina principal</a>
+    <br>
+
+    <!-- FOOTER-->
+    <footer>
+        <h2>FOOTER</h2>
+    </footer>  
+</body>
+</html>

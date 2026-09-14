@@ -1,0 +1,29 @@
+ etiquetas:
+ - de cierre:
+    <nombre-etiqueta> </nombre-etiqueta>
+
+-de autocierre
+ <nombre-etiqueta/>
+ <nombre-etiqueta>
+
+Casa etiqueta tiene un elemento
+ELEMENTO: 
+- Quien determina la funcionalidad/significado de l ETIQUETA ES El elementopor ejemplio
+ POR EJEMPLO:
+    -<BUTTON>      es una etiqueta del tipo boton
+
+ATRIBUTO:
+Cada elemento tiene una serie de atributos
+El atributo es una configuracion del elemento
+<caja tamanio="chica" color='rojo' con-puntas='redondas'>
+
+
+ANIDAMIENTO:
+ - La capacidade de que una etiqueta contenga otra etiqueta
+
+ Buena practica:
+ INDENTACION: poder ordenar visualmente, para entender la jerarquia de lo que se ve
+ <padre>
+    <hijo>
+    </hijo>
+ </padre>

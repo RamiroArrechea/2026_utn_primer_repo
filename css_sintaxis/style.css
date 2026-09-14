@@ -1,0 +1,38 @@
+    /*Selector de elemento H1*/
+    h1{
+        color: red;
+    }
+
+/*ESPEDIFICIDAD::aftermienstras mas especifico es un 
+ selector/instruccion, es el estilo que 
+ terminara aplicandose
+ 
+ Selector ID gana a clase (pero no se usa)
+    --> porque css esta ensado para ser reutilizable
+    
+Selector ID
+Selector de clase
+Selector de elemento
+Selector universal
+
+
+/*Selector de clase*/
+ .tituloDiferente{
+        color: violet;
+    }
+
+/*En este ejemplobtn es la clase principal que define 
+como se ve un boton
+Btn-primary en cambio es la clase variante 
+porque modifica al btn existente*/
+.btn{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius:  5px;
+    }
+
+.btn--primary{
+    background-color: violet;
+    color: white;
+}
