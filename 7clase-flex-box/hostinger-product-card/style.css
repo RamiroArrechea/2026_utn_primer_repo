@@ -1,0 +1,93 @@
+/*CSS PARA LA HOSTINGER -PRODUCT-CARD*/
+
+/*NORMALIZAMOS PAREAMETROS*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.tarjeta-contenedor {
+    /* Estilos para el contenedor de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    background-color: #ffff;
+    border-radius: 8px;
+    width: 50vw; /*50% del viewport width */
+    /*height: 50vw;  50% del viewport height */
+    margin-top: 20px;  /*margen superior de separacion*/
+    
+}
+
+.descuento-79-off {
+    display: flex;
+    margin-right: 10px;
+    align-self: flex-end; /* Corregido: align-self modifica el comportamiento del hijo */
+    color: #ad10d4;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 20px;  
+}
+
+.info-plan {
+    margin-right: 10px;
+    align-self: flex-start; /* Corregido: align-self modifica el comportamiento del hijo */
+    padding: 20px;
+}
+
+
+.seccion-precios {
+    display: flex; /*Solo el padre lleva flex */
+    flex-direction: column;
+    padding: 20px;
+}
+    /*  LOS HIJOS HEREDAN EL FLEX*/
+    .precio-original {
+        align-self: flex-start; /* Corregido: align-self modifica el comportamiento del hijo */
+        text-decoration: line-through;
+        font-size: 0.8em; /* Hace el texto un 20% más chico que el tamaño original */
+    }
+
+    .precio-actual {
+        align-self: flex-start; /* Corregido: align-self modifica el comportamiento del hijo */
+    }
+
+    .monto {
+        font-weight: bold;
+        font-size: 2.2em;
+    }
+
+
+.elegir-plan {
+    text-align: center;
+    padding: 10px 20px;
+    color: #ad10d4;
+    border-radius: 8px;
+    border: 2px solid #ad10d4;
+    text-decoration: none;
+}
+
+.info-plan {
+    display: flex; /*Solo el padre lleva flex */
+    flex-direction: column;
+    padding: 20px;
+    color: hsl(0, 1%, 57%);
+}
+
+    /* HIJOS DEL INFO-PLAN*/
+    .precio-promocion {
+        font-weight: bold;
+        color: hsl(0, 1%, 41%);
+    }

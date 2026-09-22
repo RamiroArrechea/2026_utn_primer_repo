@@ -1,0 +1,129 @@
+/*Desarrollar y estilar el aside de MDN*/
+
+/*NORMALIZAMOS PAREAMETROS*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* HEADER */
+header {
+    padding: 20px;
+    background-color:  #ffff;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+
+/* Quitar puntos de la lista de navegación */
+.navegacion ul {
+    list-style: none; /* ¡Esto saca los puntos! */
+    display: flex; /* Pone los items en fila horizontal */
+    gap: 20px; /* Espacio entre cada link */
+}
+
+.navegacion a {
+    text-decoration: none; /* Saca el subrayado */
+}
+
+/* CONTENEDOR DE LAS 3 COLUMNAS - ¡ACÁ ESTÁ LA MAGIA DEL FLEXBOX! */
+.layout-principal {
+    display: flex; /* Activa Flexbox */
+    gap: 20px; /* Espacio entre columnas */
+    padding: 20px;
+    background-color: #f5f5f5; /* Gris clarito de fondo */
+    margin-top: 20px; /* Separación superior */
+}
+
+    /* HIJOS DEL LAYOUT PRINCIPAL */
+    /*/////////////////////////////*/
+    /* ASIDE IZQUIERDO */
+    /*/////////////////////////////*/
+    .menu-izquierdo {
+        width: 200px; /* Ancho fijo */
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    .menu-izquierdo ul {
+        list-style: none; /* Sacamos los puntos */
+    }
+
+    .menu-izquierdo li {
+        margin-bottom: 10px; /* Espacio entre items */
+    }
+
+    /*/////////////////////////////*/
+    /* CONTENIDO PRINCIPAL (MAIN) */
+    /*/////////////////////////////*/
+    main {
+        flex: 1; /* Ocupa todo el espacio disponible */
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    main h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: #1b1b1b;
+    }
+
+    main p {
+        margin-bottom: 15px;
+    }
+
+    /*/////////////////////////////*/
+    /* ASIDE DERECHO (ÍNDICE) */
+    /*/////////////////////////////*/
+    .indice-derecho {
+        width: 250px; /* Ancho fijo */
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+        height: fit-content; /* Se ajusta al contenido */
+    }
+
+    .indice-derecho ol {
+        list-style: none; /* Sacamos los números */
+    }
+
+    .indice-derecho li {
+        margin-bottom: 10px;
+    }
+
+    .indice-derecho a {
+        color: #0066cc; /* Azul como los links de MDN */
+        text-decoration: none;
+    }
+
+    .indice-derecho a:hover {
+        text-decoration: underline;
+        color: #ffffff;
+    }
+
+    .indice-derecho li {
+        padding: 10px 0; /* Espacio INTERNO arriba y abajo */
+    }
+    .indice-derecho li:hover {
+        background-color: #777777; /* Azul como los links de MDN */        
+    }
+
+
+/* FOOTER */
+footer {
+    background-color: #1b1b1b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
