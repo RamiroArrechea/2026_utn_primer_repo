@@ -1,0 +1,156 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.padre{
+    height: 90vh;
+    background-color: greenyellow;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20vh;
+
+    position: relative;
+}
+
+.hijo{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: black;
+    
+}
+
+.hijo:nth-child(1){
+    background-color: red;
+}
+.hijo:nth-child(2){
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.hijo:nth-child(3){
+    background-color: blueviolet;
+}
+
+/* 
+POSITION:
+Existen 5 tipos de position:
+    - static: Es el valor por defecto del position, NO HACE NADA.
+    - relative: 
+        Nos permite posicionar un elemento desde su posicion relativa.
+    - absolute:
+        - Nos permite posicionar un elemento desde el padre mas cercano no static (o usara directamente el viewport)
+        - El elemento se superpone a todo desde el padre, deja de estar en el mismo plano que sus hermanos
+    - fixed:
+        - Nos permite posicionar y ANCLAR/PEGAR un elemento al viewport
+    - sticky:
+        - Nos permite posicionar y anclar/pegar un elemento dentro de un padre y conservando su posicion relativa
+
+Si tu elemento es position distinto de static podes usar las propiedades:
+    - top
+    - bottom
+    - left
+    - right
+
+Top y Left tienen precedencia sobre bottom y right
+*/
+
+
+header{
+    background-color: yellow;
+    height: 70px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+
+.search-ml{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-ml input{
+    width: 100%;
+    height: 28px;
+    padding-left: 16px;
+    padding-right: 30px;
+}
+
+
+.search-button{
+    position: absolute;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+
+.wsp-btn{
+    width: 46px;
+    height: 46px;
+    background-color: rgb(16, 162, 16);
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+}
+
+
+.code-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    background-color: black;
+}
+
+.code{
+    width: 800px;
+    position: relative;
+}
+
+.code-header{
+    background-color: rgb(65, 65, 65);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 40px;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    position: sticky;
+  
+    top: 70px; /* El espacio minimo que puede haber entre el top del viewport y yo */
+}
+
+.code-content{
+    background-color: rgb(27, 27, 27);
+    height: 1000px;
+    color: white;
+    padding: 10px;
+}

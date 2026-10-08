@@ -1,67 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/*NORMALIZAMOS PAREAMETROS*/
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
-
-/*Toda propiedad tienen un valor por defecto*/
- 
-.padre{
-
-    /* 1vw = 1% del ancho del viewport */
-
-    width: 100vw; /*100% del viewport width */
-    height: 100vh; /* 100% del viewport height */
-    background-color: green;
-
-    /*FLEXBOX es una herramieta de css que nos permite
-    acomodar a nuestros hijos
-    fLEXBOX se basa en un padre ordenando a su hijos
-    */
-
-    /*habilita que este elemento sea flexible*/
-    /*habilita las propiedades flexbox*/
-    display: flex; 
-    flex-direction: row; 
-    /*marca la direccion de tu elemtno
-    puede ser row: (uno al lado del otro)
-    colum (uno debajo del otro) 
-    */
-
-    justify-content: center; /*flex-start, flex-end, center, space-between, space-around, space-evenly*/
-    align-items: center; /*flex-start, flex-end, center, stretch, baseline*/
-
-
+body{
+    background-color: #1C1F25;
 }
 
-
-.hijo{
-
-    width: 50px;
-
+header{
     height: 70px;
-
-    background-color: black;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.hijo-1{
-
-    background-color: red;
-
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.hijo-2{
-
-    background-color: blue;
-
+.logo path{
+    fill: white;
 }
 
-.hijo-3{
 
-    background-color: blueviolet;
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
 
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.login-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: #272F43;
+    border: 1px solid rgba(255, 255, 255, 0.554);
+    color: white;
+    font-size: 13px;
+    height: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 8px;
+    width: 90px;
 }

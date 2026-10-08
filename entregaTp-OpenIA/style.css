@@ -1,0 +1,356 @@
+/*TP - OPEN IA */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+/*Normalizo mi pagina*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/*Creando variables de color*/
+:root{
+    --color-primario: #080808;
+    --color-secundario: #222322;
+    --color-terciario: #4d4c4c;
+    --color-grisPlomo: #aba5a5;    
+    --color-texto: #ffffff;
+    --color-hover: #7a7979;
+    --color-boton: #222322;
+}
+
+/*dandole colores al body*/
+body{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--color-primario);
+    color:  var(--color-texto);
+}
+
+/*******************************/
+/*header*/
+/*******************************/
+header{
+    position: sticky;
+    top: 0;
+    padding: 0px 24px;           /* Espacio interno (arriba/abajo 16px, izq/der 24px) */
+}
+
+
+/* header contenedor */
+.header-contenedor-principal {
+    display: flex;                /* EL padre Activa Flexbox */
+    margin-left: auto; /* 3 hijos: uno a la izq, uno al centro, uno a la der */
+    
+    align-items: center;          
+    
+    padding: 12px 28px; /* Espacio interno (arriba/abajo 12px, izq/der 28px) */
+}
+
+
+    /* -- 1ra seccion logo --*/
+    .logo-container{
+        display: flex;
+        gap: 12px;  
+    }
+
+    .logo-container svg {
+        fill: white; /*hace que el logo sea blanco*/
+        width: 22px; /* Achica el ancho (acá varia a conveniencia) */
+        height: auto; /* Mantiene la proporción original para que no se deforme */
+        display: block;
+    }
+
+    .logo-container a {
+        color: white; 
+        text-decoration: none;
+    }
+
+
+    /* 2da seccion navegador */
+    .navegador-contenedor {
+        display: flex; /* Pone los items en fila horizontal */
+        align-items: center;
+        margin: 0;
+        padding: 0 28px; /* Espacio interno (arriba/abajo 12px, izq/der 28px) */
+        gap: 24px; /* Espacio entre cada enlace */        
+    }
+
+    .navegador-contenedor ul {
+        display: flex; /* Pone los items en fila horizontal */
+        list-style: none; /* Quita los puntos de la lista */
+        margin: 0;
+        padding: 0;        
+        gap: 24px; /* Espacio entre cada enlace */
+        align-items: center;
+    }
+
+    .navegador-contenedor a {
+        color: white;
+        text-decoration: none; /* Quita el subrayado azul feo */
+        font-size: 15px;
+        font-weight: 500; /*es el "ancho" de la fuente en negrita*/
+    }
+
+    /*Truco: Cuando el mouse toca el contenedor (ul), TODOS los 'a' se ponen grises */
+    .navegador-contenedor ul:hover a {
+        color: var(--color-grisPlomo); /* Gris plomo */
+    }
+
+    /*La excepción: Pero el 'a' específico que está recibiendo el hover, se queda blanco */
+    .navegador-contenedor ul:hover a:hover {
+        color: var(--color-texto);
+    }
+
+    /* 3ra seccion boton lupa */
+    .lupa-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .lupa-btn {
+        background: none; /* Quita el fondo gris por defecto */
+        border: none; /* Quita el borde por defecto */
+        cursor: pointer; /* Manita al pasar el mouse */
+        padding: 8px; /* Crea un área de clic más cómoda alrededor del icono */
+        display: flex;
+        align-items: center;
+    }
+
+    .lupa-btn svg {
+        fill: var(--color-grisPlomo);  
+        
+        width: 15px; /* Achica el ancho (acá varia a conveniencia) */
+        height: auto; /* Mantiene la proporción original para que no se deforme */
+        display: block;
+    }
+    
+    /* Efecto al pasar el mouse por encima de la lupa */
+    .lupa-btn:hover svg {
+        transition: color 0.5s; /* Suaviza el cambio de color */
+        fill: var(--color-texto); /* Se vuelve blanco al hacer hover */
+    }
+
+    /* 4ra seccion Consultas  */
+    .header-consulta {
+        display: flex; /* Pone la lupa y los botones en fila */
+        align-items: center; /* Alinea verticalmente al centro */
+        margin-left: auto;
+        gap: 16px; /* Espacio entre la lupa y los botones */
+    }
+
+    .header-enlaces {
+        display: flex;
+        gap: 16px; /* Espacio entre "Prueba OpenAI" y "Habla con un experto" */
+        align-items: center;
+    }
+
+    .pruebaOpenAI {
+        text-decoration: none;
+        background-color: var(--color-secundario);
+        color: var(--color-texto); /* Texto blanco */
+        padding: 8px 16px; /* Relleno interno para darle forma de botón */
+        border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */
+        font-size: 14px;
+        font-weight: 400;
+        transition: background-color 0.2s;
+    }
+
+    .pruebaOpenAI:hover {
+        background-color: var(--color-terciario); /* Se aclara un poco al pasar el mouse */
+    }
+
+    .hablaExperto {
+        text-decoration: none;
+        background-color: var(--color-texto); /* Fondo blanco */
+        padding: 8px 16px; /* Relleno interno para darle forma de botón */
+        border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */
+        color: var(--color-secundario); /* Texto negro */
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .hablaExperto:hover {
+        background-color: #cdcccc;
+    }
+
+
+    .menu-btn {
+        /*este menu me va a servir para la media query mas adelante*/
+        /*background: transparent; 
+        border: none; 
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;*/
+       display: none; 
+    }
+    .menu-btn svg {
+        background: transparent; /* Por las dudas */
+        color: var(--color-texto); /* O el color que quieras que tenga el icono */
+    }
+
+    /*.menu-btn svg rect { 
+        lo dejo comentado por las dudas que lo necesite
+        fill: transparent;
+    }*/
+
+
+/*******************************/
+/*HERO*/
+/*******************************/
+.hero-seccion {
+    display: flex;  /*el padre tiene el flex*/
+    flex-direction: row;  /*direccion: vertical u horizontal */
+    align-items: center; /*¿como se alinean en la pantalla?*/          
+    gap: 40px; /* Espacio entre la imagen y el texto */
+    min-height: 50vh; /* Ocupa al menos el 50% de la altura de la pantalla */
+
+    padding: 12px 28px; /* Espacio interno (arriba/abajo 12px, izq/der 28px) */
+}
+
+.hero-contenido {
+    display: flex;
+    flex-direction: column; /* ahora es vertical (uno debajo del otro) */
+    align-items: flex-start; /* "flex-start" ->"alineado a la izquierda"*/
+    gap: 24px; /* Espacio entre el epígrafe, el título, el subtítulo y los botones */
+    
+    flex: 1; /* Ocupa el espacio que necesite... */
+    max-width: 664px; 
+}
+    /* Epígrafe  */
+    .hero-epigrafe p {
+        font-size: 14px;      
+        font-weight: 600;      
+        letter-spacing: 1px;   
+        color: #a1a1aa;        
+        margin: 0;
+    }
+
+    /* Título Principal*/
+    .hero-titulo h1 {
+        font-size: 64px;       
+        line-height: 70px;     
+        letter-spacing: -2px;  
+        font-weight: 500;      
+        color: #ffffff;      
+        margin: 0;
+    }
+
+    /* Subtítulo */
+    .hero-subtitulo p {
+        font-size: 17px;      
+        line-height: 28px;    
+        letter-spacing: -0.5px;
+        font-weight: 400;      
+        color: #a1a1aa;       
+        max-width: 90%;       
+        margin: 0;
+    }
+
+.hero-imagen {
+    flex: 1; /* Ocupa todo el espacio restante a la derecha */
+    display: flex;
+    justify-content: center; /* Centra la imagen en su espacio */
+}
+
+/* Redimensionamos la imagen para que no se salga de su contenedor */
+.hero-imagen img {
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción para que no se deforme */
+    border-radius: 12px; /* Opcional: le da un borde redondeado suave como en la web */
+}
+
+/*******************************/
+/*footer*/
+/*******************************/
+footer {
+    margin-top: auto; /* ¡LA MAGIA! Empuja el footer hacia abajo */
+
+    padding: 20px 40px;
+}
+
+.footer-contenedor{
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 20px 10px; /* Espacio interno (arriba/abajo 12px, izq/der 28px) */
+}
+
+    /* FOOTER REDES*/
+    .footer-redes{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        gap: 20px; /* Espacio entre cada enlace */
+    }
+
+    .footer-redes a {
+        color: white;        
+        text-decoration: none; /* Quita el subrayado azul feo */
+        font-size: 15px;
+        font-weight: 500; /*es el "ancho" de la fuente en negrita*/
+    }
+    .footer-redes svg {
+        background: transparent;
+        width: 14px; /* Achica el ancho (acá varia a conveniencia) */
+        height: auto; /* Mantiene la proporción original para que no se deforme */
+    }
+
+    /* FOOTER ENLACES*/
+    .footer-enlaces{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        gap: 10px; /* Espacio entre cada enlace */
+    }
+
+    .footer-enlaces a{
+        color: white;
+        font-weight: 500; /*es el "ancho" de la fuente en negrita*/
+    }
+
+    /* FOOTER CONSULTA*/
+    .footer-consulta{
+        font-size: 12px;
+               
+        background-color: var(--color-boton);
+        padding: 8px 16px; /* Relleno interno para darle forma de botón */
+        border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */    
+    }
+
+    .footer-consulta a{
+        /*footer-consulta a e quien organiza los 3 elementos internos (icono + 2 textos)
+        por eso, el display:flex  va acá*/
+        display:flex;
+        align-items: center;
+        gap: 10px;              /* Espacio entre cada enlace */
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 400; /*es el "ancho" de la fuente en negrita*/
+        color: white;
+    }
+
+    .footer-consulta svg {
+        background: transparent;
+        color: --var(--color-texto);
+        width: 14px; /* Achica el ancho (acá varia a conveniencia) */
+        height: auto; /* Mantiene la proporción original para que no se deforme */
+    }
+
+    .footer-idioma{
+        color: var(--color-texto);
+    }
+    .footer-pais{
+        color: var(--color-grisPlomo); 
+    }

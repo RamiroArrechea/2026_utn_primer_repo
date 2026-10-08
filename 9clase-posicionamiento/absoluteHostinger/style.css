@@ -1,0 +1,145 @@
+
+/*CSS ABSOLUTE HOSTINGER
+ creamos la seccion: Expresa tu idea -> de la pagína Hostinger */
+
+/*Normalizamos nuestra pagína*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: DM Sans, sans-serif;   
+}
+
+:root {
+    /* DECLARO VARIABLES: 
+    El nombre SIEMPRE debe empezar con dos guiones (--) */
+    --color-principal:  #1c1c1e;
+    --color-secundario: #58585e;
+    --tamano-fuente: 46px;
+}
+
+body{
+    background-image: url(https://www.hostinger.com/cdn-cgi/imagedelivery/LqiWLm-3MGbYHtFuUbcBtA/280d07ab-6324-4398-2c83-333b237a6b00/sharpen=0);
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}   
+
+.div_contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    gap: 20px;
+}
+
+/*titulo h2 */
+.h-icon {
+    width:40px;
+    height:40px
+}
+
+
+.h-icon svg {
+    width: 100%;  /* Le decimos al SVG que ocupe todo el espacio de su contenedor */
+    height: 100%;
+    
+    /* Esta línea es un truco de seguridad para asegurarte de que 
+       el icono mantenga su proporción original y no se deforme */
+    display: block; 
+}
+
+    .expresa_tu_idea{
+        font-size: var(--tamano-fuente);
+        color: var(--color-principal);
+        font-weight: 299;  /*es el "ancho" de la fuente en negrita*/
+    }
+
+    .agente-container{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .agente{
+        /* Define los colores del degradado de izquierda a derecha */
+        background: linear-gradient(-87.63deg,#e536db 6.95%,#673de6 51.17%,#3ab0ff 109.29%);
+        
+        /* Recorta el fondo para que solo cubra el texto */
+        -webkit-background-clip: text;
+        background-clip: text;
+        
+        /* Hace que el color del texto original sea transparente para que se vea el fondo */
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        
+        /* Estilos opcionales para asemejarlo al de la imagen */
+        font-family: sans-serif; /* tipografía que utilizo */
+        font-weight: 299;  /*es el "ancho" de la fuente en negrita*/
+        font-size: 48px;
+        display: block; /*ahora el span se adapta al ancho de su contenedor*/
+    }
+
+/* Elementos del input */
+/*esto es el label del imput, para ciegos*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0; /* Lo hace completamente transparente */
+}
+
+/*esta es la clase padre que va a tener  posicionamiento realitivo
+para que el boton quede dentro de ella*/
+.input-contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Contenedor de referencia */
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 680px;
+    padding: 8px 10px 8px 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(140, 82, 255, 0.15);
+    box-shadow: 0px 8px 24px rgba(140, 82, 255, 0.08);
+    margin-top: 15px;
+}
+
+
+/*es el imput dentro del contenedor*/
+.input-contenedor input {
+    padding-right: 50px; /* Espacio para que el texto no quede debajo del botón */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 17px;
+    color: #000;
+    border: none;
+    outline: none;
+    flex: 1; /* Permite que el input ocupe todo el espacio disponible */
+}
+
+
+
+button{
+    color: white;
+    background-color: #673de6;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+}
+
+/*Anuncio Plan */
+.plan{
+    font-size: 14px;
+    color: var(--color-secundario);
+}

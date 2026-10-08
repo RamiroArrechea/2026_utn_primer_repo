@@ -1,0 +1,67 @@
+
+/*NORMALIZAMOS PAREAMETROS*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/*Toda propiedad tienen un valor por defecto*/
+ 
+.padre{
+
+    /* 1vw = 1% del ancho del viewport */
+
+    width: 100vw; /*100% del viewport width */
+    height: 100vh; /* 100% del viewport height */
+    background-color: green;
+
+    /*FLEXBOX es una herramieta de css que nos permite
+    acomodar a nuestros hijos
+    fLEXBOX se basa en un padre ordenando a su hijos
+    */
+
+    /*habilita que este elemento sea flexible*/
+    /*habilita las propiedades flexbox*/
+    display: flex; 
+    flex-direction: row; 
+    /*marca la direccion de tu elemtno
+    puede ser row: (uno al lado del otro)
+    colum (uno debajo del otro) 
+    */
+
+    justify-content: center; /*flex-start, flex-end, center, space-between, space-around, space-evenly*/
+    align-items: center; /*flex-start, flex-end, center, stretch, baseline*/
+
+
+}
+
+
+.hijo{
+
+    width: 50px;
+
+    height: 70px;
+
+    background-color: black;
+
+}
+
+.hijo-1{
+
+    background-color: red;
+
+}
+
+.hijo-2{
+
+    background-color: blue;
+
+}
+
+.hijo-3{
+
+    background-color: blueviolet;
+
+}
