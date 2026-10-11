@@ -18,8 +18,8 @@ Resultado final: "Los productos que ingreste son: Tomate, Pera, Zanahoria"
 */
 
 
-var cantidadProducto = prompt("Elegi la cantidad de producto" );
-const canastoProducto = []; //nuevo concepto de array vacio
+let cantidadProducto = prompt("Elegi la cantidad de producto" );
+const canastoProducto = []; /*nuevo concepto de array vacio*/
 
 for(let iterador = 1; //Donde inicia iterador
     iterador <= cantidadProducto; //Limite: condicion que si deja de cumplir deja de repetirse el codigo
@@ -36,8 +36,7 @@ for (let i = 0; i < canastoProducto.length; i++) {
     // Agregamos el número actual al mensaje
     mensaje += canastoProducto[i];
     
-    // 4. Lógica para la coma: 
-    // Si NO es el último elemento, le agregamos una coma y un espacio
+
     if (i < canastoProducto.length - 1) {
         mensaje += ", ";
     }

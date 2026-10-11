@@ -18,6 +18,7 @@
     --color-secundario: #222322;
     --color-terciario: #4d4c4c;
     --color-grisPlomo: #aba5a5;    
+    --color-grisCeniza: #d3d1d1;
     --color-texto: #ffffff;
     --color-hover: #7a7979;
     --color-boton: #222322;
@@ -41,6 +42,7 @@ header{
     position: sticky;
     top: 0;
     padding: 0px 24px;           /* Espacio interno (arriba/abajo 16px, izq/der 24px) */
+    background-color: var(--color-primario);
 }
 
 
@@ -183,7 +185,7 @@ header{
 
 
     .menu-btn {
-        /*este menu me va a servir para la media query mas adelante*/
+        /*este menu me va a servir para la media query mas adelante, por eso no lo borro*/
         /*background: transparent; 
         border: none; 
         padding: 0;
@@ -225,23 +227,26 @@ header{
     
     flex: 1; /* Ocupa el espacio que necesite... */
     max-width: 664px; 
+    padding: 12px 28px; 
+    /* mantengo padding, que puse en header, 
+    los hijos lo heredan*/
 }
     /* Epígrafe  */
     .hero-epigrafe p {
-        font-size: 14px;      
+        font-size: 14px;      /*muy parecido al original*/
         font-weight: 600;      
         letter-spacing: 1px;   
-        color: #a1a1aa;        
-        margin: 0;
+        color: var(--color-texto);
+        margin: 0;        
     }
 
     /* Título Principal*/
     .hero-titulo h1 {
-        font-size: 64px;       
+        font-size: 60px;       /*ajusta el tamaño del titulo, para que coincidiera con original*/
         line-height: 70px;     
         letter-spacing: -2px;  
         font-weight: 500;      
-        color: #ffffff;      
+        color: var(--color-texto);
         margin: 0;
     }
 
@@ -251,9 +256,47 @@ header{
         line-height: 28px;    
         letter-spacing: -0.5px;
         font-weight: 400;      
-        color: #a1a1aa;       
+        color: var(--color-texto);
         max-width: 90%;       
         margin: 0;
+    }
+
+
+    .hero-enlaces {
+        display: flex; /* Pone la lupa y los botones en fila */
+        flex-direction: row; /* direccion-> horizontal */
+        align-items: flex-start; /* "flex-start" ->"alineado a la izquierda"*/
+        gap: 12px; /* Espacio entre enlaces */
+    }
+
+    .enlace-primario {
+        text-decoration: none;
+        background-color: #ffff;
+        color: var(--color-primario); /* Texto negro */
+        padding: 12px 20px; /* Relleno interno para darle forma de botón */
+        border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */
+        font-size: 14px;
+        font-weight: 400;
+        transition: background-color 0.2s;
+    }
+
+    .enlace-primario:hover {
+        background-color: var(--color-grisCeniza); /* Se aclara un poco al pasar el mouse */
+    }
+    
+    .enlaces-secundario {
+        text-decoration: none;
+        background-color: var(--color-secundario);
+        color: var(--color-texto); /* Texto blanco */
+        padding: 12px 20px; /* Relleno interno para darle forma de botón */
+        border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */
+        font-size: 14px;
+        font-weight: 400;
+        transition: background-color 0.2s;
+    }
+
+    .enlaces-secundario:hover {
+        background-color: var(--color-terciario); /* Se aclara un poco al pasar el mouse */
     }
 
 .hero-imagen {
@@ -264,7 +307,7 @@ header{
 
 /* Redimensionamos la imagen para que no se salga de su contenedor */
 .hero-imagen img {
-    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    max-width: 90%; /* La imagen nunca será más ancha que su contenedor */
     height: auto; /* Mantiene la proporción para que no se deforme */
     border-radius: 12px; /* Opcional: le da un borde redondeado suave como en la web */
 }
