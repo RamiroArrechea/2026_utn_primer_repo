@@ -81,7 +81,7 @@ header{
         display: flex; /* Pone los items en fila horizontal */
         align-items: center;
         margin: 0;
-        padding: 0 28px; /* Espacio interno (arriba/abajo 12px, izq/der 28px) */
+        padding: 0 50px; /* Espacio interno (arriba/abajo 0px, izq/der 50px) */
         gap: 24px; /* Espacio entre cada enlace */        
     }
 
@@ -96,12 +96,11 @@ header{
 
     .navegador-contenedor a {
         color: white;
-        text-decoration: none; /* Quita el subrayado azul feo */
-        font-size: 15px;
+        text-decoration: none; /* Quita el subrayado azul*/
+        font-size: 13px;
         font-weight: 500; /*es el "ancho" de la fuente en negrita*/
     }
 
-    /*Truco: Cuando el mouse toca el contenedor (ul), TODOS los 'a' se ponen grises */
     .navegador-contenedor ul:hover a {
         color: var(--color-grisPlomo); /* Gris plomo */
     }
@@ -168,6 +167,16 @@ header{
     .pruebaOpenAI:hover {
         background-color: var(--color-terciario); /* Se aclara un poco al pasar el mouse */
     }
+
+    .pruebaOpenAI svg {                
+        width: 14px; /* Achica el ancho (acá varia a conveniencia) */
+        height: auto; /* Mantiene la proporción original para que no se deforme */
+    }
+    
+    .pruebaOpenAI:hover svg {
+        transform: rotate(180deg); /* Gira el SVG 180 grados.*/
+    }
+    
 
     .hablaExperto {
         text-decoration: none;
@@ -312,6 +321,117 @@ header{
     border-radius: 12px; /* Opcional: le da un borde redondeado suave como en la web */
 }
 
+
+/*******************************/
+/*Seccion Soliciones*/
+/*******************************/
+.soluciones-seccion {
+    display: flex;  /*el padre tiene el flex*/
+    flex-direction:column;  /*direccion: vertical u horizontal */
+    align-items: center; /*¿como se alinean en la pantalla?*/   
+    text-align: center;         
+    gap: 40px; /* Espacio entre la imagen y el texto */
+    /*min-height: 50vh;  Ocupa al menos el 50% de la altura de la pantalla */
+
+    padding: 60px 20px; /* Espacio interno (arriba/abajo 12px, izq/der 28px) */
+}
+
+
+    /* Título secundario*/
+    .soluciones-titulo h2 {
+        font-size: 50px;       /*ajusta el tamaño del titulo, para que coincidiera con original*/
+        line-height: 55px;     
+        letter-spacing: -2px;  
+        font-weight: 500;      
+        color: var(--color-texto);
+        margin: 0;
+    }
+
+    /* Subtítulo */
+    .soluciones-subtitulo p {
+        font-size: 17px;      
+        line-height: 28px;    
+        letter-spacing: -0.5px;
+        font-weight: 400;      
+        color: var(--color-texto);
+        max-width: 700px;  
+        margin: 0;
+        /*padding: 12px 28px; /* Espacio interno (arriba/abajo 12px, izq/der 28px) */
+        text-wrap: balance;  /*hace que los textos esten balanceados en "cantidad"*/
+    }
+
+/*espacio del articulo : tarjeta*/
+ .contenedor-tarjeta-producto {
+    display: flex;
+    flex-direction: row; /* ¡FILA! Para que las 3 tarjetas estén lado a lado */
+    justify-content: center; /* Centra el grupo de tarjetas si sobra espacio */
+    gap: 24px; /* Espacio entre cada tarjeta */
+    width: 100%;
+    max-width: 1400px; /* Para que no se estiren infinitamente en pantallas gigantes */
+}
+
+.articulo-tarjeta {
+    display: flex;
+    flex-direction: column; /* Apila: Imagen -> Título -> Texto -> Lista -> Botón */
+    text-align: left;         
+    background-color: #1a1a1a; 
+    border: 1px solid #333333; /* Borde sutil para definirla */
+    border-radius: 5px; /* Bordes redondeados*/
+    overflow: hidden; /* Asegura que la imagen respete los bordes redondeados */
+    padding: 5px 5px;
+ }
+
+ .imagen-producto {
+    /*width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    /*height: 220px; /* Altura fija para que las 3 imágenes sean idénticas */
+    border-bottom: 1px solid #333333; /* Línea separadora sutil */
+    border-radius: 5px;
+}
+.articulo-tarjeta h3 {
+    margin: 24px 10px 8px 10px;/* Arriba, Derecha, Abajo, Izquierda */
+
+    font-size: 22px;
+    font-weight: 600; /* Semi-negrita */
+    color: var(--color-texto);
+}
+
+.descripcion-producto {
+    margin: 0 10px 16px 10px;
+
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-texto);
+    font-style: oblique;    
+}
+
+.articulo-tarjeta ul {
+    margin: 0 24px 24px 24px;
+    padding-left: 20px; /* Espacio para las viñetas (puntos) */
+    color: var(--color-texto); 
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.articulo-tarjeta ul li {
+    margin-bottom: 8px; /* Espacio entre cada ítem de la lista */
+}
+
+.boton-tarjeta {
+    /* TRUCO 2: Empuja el botón siempre al fondo de la tarjeta */
+    margin-top: auto; 
+    
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el texto y la flechita */
+    padding: 0 24px 24px 24px; /* Solo padding abajo y a los lados */
+    
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 /*******************************/
 /*footer*/
 /*******************************/
@@ -383,7 +503,7 @@ footer {
         font-weight: 400; /*es el "ancho" de la fuente en negrita*/
         color: white;
     }
-
+    
     .footer-consulta svg {
         background: transparent;
         color: --var(--color-texto);
@@ -396,4 +516,8 @@ footer {
     }
     .footer-pais{
         color: var(--color-grisPlomo); 
+    }
+
+    .footer-consulta:hover {
+        background-color: var(--color-terciario); /* Se aclara un poco al pasar el mouse */
     }
