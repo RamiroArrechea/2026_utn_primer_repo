@@ -161,7 +161,7 @@ header{
         border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */
         font-size: 14px;
         font-weight: 400;
-        transition: background-color 0.2s;
+        transition: 0.2s;
     }
 
     .pruebaOpenAI:hover {
@@ -194,26 +194,15 @@ header{
 
 
     .menu-btn {
-        /*este menu me va a servir para la media query mas adelante, por eso no lo borro*/
-        /*background: transparent; 
-        border: none; 
-        padding: 0;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;*/
        display: none; 
     }
+
     .menu-btn svg {
         background: transparent; /* Por las dudas */
         color: var(--color-texto); /* O el color que quieras que tenga el icono */
     }
 
-    /*.menu-btn svg rect { 
-        lo dejo comentado por las dudas que lo necesite
-        fill: transparent;
-    }*/
-
+    
 
 /*******************************/
 /*HERO*/
@@ -417,19 +406,31 @@ header{
 }
 
 .boton-tarjeta {
-    /* TRUCO 2: Empuja el botón siempre al fondo de la tarjeta */
+    /*TRUCO 2: Empuja el botón siempre al fondo de la tarjeta */
     margin-top: auto; 
+    text-align: center;
     
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* Espacio entre el texto y la flechita */
-    padding: 0 24px 24px 24px; /* Solo padding abajo y a los lados */
+    background-color: var(--color-texto); /* Fondo blanco */    
+    padding: 10px 24px 10px 24px; /* Solo padding abajo y a los lados */
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-secundario); /* Texto negro */
     
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
+    border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */
+
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease;        
+}
+
+.boton-tarjeta:hover {
+    background-color: #cdcccc;
+}
+
+.boton-tarjeta svg {
+    background: transparent; /* Por las dudas */
+    color: var(--color-secundario); /* Texto negro */
+    height: 12px; /* Achica el alto (acá varia a conveniencia) */
+    font-weight:500; /* grosor de negrita */
 }
 
 /*******************************/
@@ -521,3 +522,455 @@ footer {
     .footer-consulta:hover {
         background-color: var(--color-terciario); /* Se aclara un poco al pasar el mouse */
     }
+
+ /* ==========================================================================
+        MEDIA QUERYS
+  ========================================================================== */
+
+/* ==========================================================================
+   MEDIA QUERY PARA TABLET / LAPTOP CHICA (max-width: 1024px)
+   ========================================================================== */
+/*un intermedio : cambia el grosor del boton*/
+@media (max-width: 1292px) {  
+    /* ------------------------- HERO SECTION ------------------------- */
+    .enlace-primario {
+        font-size: 12px;
+    }
+}
+
+/*Desaparece el nav*/
+@media (max-width: 1245px) {
+    
+    /* ------------------------- HEADER ------------------------- */
+    .header-contenedor-principal {
+        justify-content: space-between; /* Logo a la izq, el resto a la der */
+        padding: 12px 16px;
+    }
+
+    .navegador-contenedor {
+        display: none; /* ahcemos desaparecer el nav. */
+    }
+ 
+    
+    .pruebaOpenAI {
+        text-decoration: none;
+        background-color: var(--color-secundario);
+        color: var(--color-texto); /* Texto blanco */
+        padding: 8px 16px; /* Relleno interno para darle forma de botón */
+        border-radius: 999px; /* Bordes completamente redondeados (forma de pastilla) */
+        font-size: 14px;
+        font-weight: 400;
+        transition: 0.2s;
+    }
+
+    .pruebaOpenAI svg {                
+        width: 14px; /* Achica el ancho (acá varia a conveniencia) */
+        height: auto; /* Mantiene la proporción original para que no se deforme */
+    }
+    
+    .pruebaOpenAI:hover svg {
+        transform: rotate(180deg); /* Gira el SVG 180 grados.*/
+    }
+    
+    .menu-btn {
+        background: transparent; /* Quita el fondo blanco */
+        border: none; /* Quita el borde por defecto del botón */
+        padding: 8px; /* Espacio interno */
+        cursor: pointer; /* Manito al pasar el mouse */
+        display: flex; /* Para centrar el ícono */
+        align-items: center;
+        justify-content: center;
+        color: white; /* Color del ícono (blanco) */
+    }
+        
+    .menu-btn svg {
+        background: transparent; /* Por las dudas, quita cualquier fondo del SVG */
+        color: inherit; /* Hereda el color del padre */
+    }
+
+    .lupa-container {
+        margin-left: auto; /* Esto "empuja" la lupa hacia la derecha */
+  
+    }
+
+    /* 3. ¡AQUÍ ESTÁ LA CLAVE! Anulamos el margin-left: auto del escritorio */
+    .header-consulta {
+        margin-left: 0 !important; /* El !important fuerza el cambio si hay conflicto de especificidad */
+        gap: 12px; /* Espacio entre la lupa y los botones de consulta */
+        align-items: center;
+    }
+
+    /* 4. Aseguramos que la lupa no tenga márgenes que la empujen */
+    .lupa-container {
+        padding: 12px 18px;
+        margin-right: 0;
+    }
+    
+    /* 5. Ajuste fino para que el botón hamburguesa no estorbe */
+    .menu-btn {
+        margin-left: 8px; /* Un pequeño espacio entre la consulta y la hamburguesa */
+    }
+
+    .pruebaOpenAI, .hablaExperto {
+        font-size: 14px; /* Botones más chicos */
+        padding: 6px 10px; /* Menos padding interno */
+    }
+
+    .menu-btn {
+        display: block; /* Mostramos el botón de menú hamburguesa */
+    }
+
+    /* ------------------------- HERO SECTION ------------------------- */
+    .hero-seccion {
+        padding: 60px 20px; /* Menos padding vertical y horizontal */
+        gap: 40px; /* Menos espacio entre texto e imagen */
+    }
+
+    .hero-titulo h1 {
+        font-size: 60px; /* Título más chico (de 64px a 48px) */
+        line-height: 56px; /* Ajustamos line-height proporcionalmente */
+    }
+
+    .hero-subtitulo p {
+        font-size: 16px; /* Texto más chico */
+        line-height: 24px;
+        max-width: 600px; /* Limitamos el ancho del párrafo */
+    }
+
+    .hero-contenido {
+        max-width: 50%; /* El contenido ocupa el 50% en lugar de 664px fijos */
+    }
+
+    .enlace-primario {
+        font-size: 12px; /* Solo cambio el tamaño del texto */
+        padding: 12px 18px;
+    }
+
+    /* ------------------------- SECCIÓN SOLUCIONES ------------------------- */
+    .soluciones-seccion {
+        padding: 60px 20px; /* Menos padding */
+    }
+
+    .soluciones-titulo h2 {
+        font-size: 40px; /* Título más chico (de 50px a 40px) */
+        line-height: 48px;
+    }
+
+    .soluciones-subtitulo p {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 600px;
+    }
+
+    .contenedor-tarjeta-producto {
+        gap: 16px; /* Menos espacio entre las 3 tarjetas */
+    }
+
+    .articulo-tarjeta {
+        /* Las tarjetas siguen en fila pero más ajustadas */
+    }
+
+    .imagen-producto {
+        height: 160px; /* Imágenes más chicas (de 200px a 160px) */
+    }
+
+    .articulo-tarjeta h3 {
+        font-size: 20px; /* Títulos de tarjeta más chicos */
+        margin: 20px 20px 8px 20px;
+    }
+
+    .descripcion-producto {
+        font-size: 15px;
+        margin: 0 20px 12px 20px;
+    }
+
+    .articulo-tarjeta ul {
+        font-size: 12px; /* Texto de lista más chico */
+        margin: 0 20px 20px 20px;
+        line-height: 20px;
+    }
+
+    .boton-tarjeta {
+        font-size: 13px;
+        padding: 10px 15px 10px 15px;
+    }
+
+    /* ------------------------- FOOTER ------------------------- */
+    footer {
+        padding: 20px 16px; /* Menos padding */
+    }
+
+    .footer-contenedor {
+        gap: 16px; /* Menos espacio entre las 3 secciones del footer */
+    }
+
+    .footer-redes {
+        gap: 8px; /* Menos espacio entre iconos de redes */
+    }
+
+    .footer-redes svg {
+        width: 14px; /* Iconos más chicos */
+        height: 14px;
+    }
+
+    .footer-enlaces {
+        font-size: 12px; /* Texto más chico */
+    }
+
+    .selector-idioma {
+        font-size: 12px;
+        padding: 6px 12px; /* Botón de idioma más chico */
+    }
+
+    .selector-idioma svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/*un intermedio : cambia la direccion del boton*/
+@media (max-width: 1240px) {
+    /* ------------------------- HERO SECTION ------------------------- */  
+    .hero-contenido {
+        flex: 0 0 50%; /* Ocupa el 50% sin crecer ni encogerse */
+        max-width: 600px; /* Pero no más de 600px max-width: 50%*/
+    }
+
+    .hero-imagen {
+        flex: 1; /* Ocupa el espacio restante */
+        min-width: 0; /* Evita que la imagen se desborde */
+    }
+
+    .hero-imagen img {
+        width: 100%; /* La imagen ocupa todo su contenedor */
+        height: auto;
+        border-radius: 12px;
+        display: block; /* Elimina espacios extra debajo de la imagen */
+    }
+
+    .hero-seccion {
+        display: flex;
+        flex-direction: row; /* Sigue en fila en esta resolución */
+        align-items: flex-start; /* Alinea ambos elementos arriba, no al centro */
+        gap: 40px; /* Espacio entre texto e imagen */
+    }
+
+    .hero-titulo h1 {
+        font-size: 50px; /* Título más chico (de 64px a 48px) */
+        line-height: 56px; /* Ajustamos line-height proporcionalmente */
+    }
+    
+    .hero-enlaces {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 50px;  /*lo mueve para la derecha el 50*/
+    }
+
+    .enlace-primario {
+        font-size: 14px; /* Solo cambio el tamaño del texto */
+    }    
+    .enlaces-secundario {
+        font-size: 14px; /* Solo cambio el tamaño del texto */
+    }    
+
+}
+
+/* ==========================================================================
+   2. CELULAR HORIZONTAL / TABLET VERTICAL (Hasta 768px de ancho)
+   ========================================================================== */
+   /*desaparece los enlaces del header-consulta*/
+@media (max-width: 768px) {
+    
+    /* ------------------------- HEADER ------------------------- */
+    .header-contenedor-principal {
+        justify-content: space-between; /* Logo a la izq, el resto a la der */
+        padding: 12px 16px;
+    }
+
+    /* Ocultamos los enlaces de consulta */
+    .pruebaOpenAI,
+    .hablaExperto {
+        display: none;
+    }
+
+
+    /* ------------------------- HERO SECTION ------------------------- */
+    .hero-titulo h1 {
+        font-size: 40px; /* Título más chico (de 64px a 48px) */
+        line-height: 56px; /* Ajustamos line-height proporcionalmente */
+    }
+
+   
+    /* ------------------------- FOOTER ------------------------- */
+    footer {
+        padding: 20px 16px; /* Menos padding */
+    }
+
+    .footer-enlaces {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 50px;  /*lo mueve para la derecha el 50*/
+    }
+
+
+}
+
+   /*cambio de flex: colum*/
+@media (max-width: 750px) {
+        /* ------------------------- HERO SECTION ------------------------- */
+    .hero-seccion {
+        flex-direction: column; /* Apila: Texto arriba, Imagen abajo */
+        align-items: center; /* Centra el bloque de contenido en la pantalla */
+        text-align: left; /* Mantiene el texto alineado a la izquierda (más legible) */
+        padding: 40px 20px;
+        gap: 32px; /* Espacio entre el bloque de texto y la imagen */
+    }
+
+    .hero-contenido {
+        width: 100%;
+        max-width: 100%; /* En móvil, el texto ocupa todo el ancho disponible */
+        display: flex;
+        flex-direction: column;
+        gap: 16px; /* Espacio uniforme entre epígrafe, título, subtítulo y botones */
+    }
+
+    /* Ajuste de tipografía para celular */
+    .hero-titulo h1 {
+        font-size: 32px; /* Tamaño cómodo para leer en celular */
+        line-height: 38px;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitulo p {
+        font-size: 15px;
+        line-height: 22px;
+        color: var(--color-texto); /* Asegura que se vea el color correcto */
+    }
+
+
+    .hero-enlaces {
+        display: flex;
+        flex-direction: row; /* Aqui el cambio de esta media query */
+        gap: 12px; /* Espacio horizontal entre los dos botones */
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .enlace-primario, 
+    .enlaces-secundario {
+        flex: 1; /* CLAVE: Hace que ambos botones se repartan el espacio disponible al 50% c/u */
+        min-width: 140px; /* Evita que se aplasten demasiado si la pantalla es muy angosta */
+        display: flex;
+        justify-content: center; /* Centra el texto y el ícono dentro de cada botón */
+        align-items: center;
+        padding: 12px 16px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        gap: 8px;
+        text-align: center;
+    }
+
+    /* Colores específicos (ajusta las variables según tu modo oscuro/claro) */
+    .enlace-primario {
+        background-color: var(--color-texto); /* Ej: Blanco */
+        color: var(--color-secundario); /* Ej: Negro */
+    }
+
+    .enlaces-secundario {
+        background-color: transparent;
+        color: var(--color-texto); /* Ej: Blanco */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+    }
+
+
+    .hero-imagen {
+        width: 100%;
+    }
+
+    .hero-imagen img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        display: block; /* Elimina el espacio fantasma debajo de las imágenes */
+    }
+
+    /* ==========================================================================
+    SECCIÓN SOLUCIONES EN TABLET/MÓVIL GRANDE (2 columnas)
+    ========================================================================== */
+
+    .soluciones-seccion {
+        padding: 40px 20px;
+    }
+
+    .soluciones-titulo h2 {
+        font-size: 28px;
+        line-height: 34px;
+        text-align: center;
+    }
+
+    .soluciones-subtitulo p {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto 32px auto; /* Centrado horizontalmente */
+    }
+
+    /* ========================================= */
+    /* GRID DE 2 COLUMNAS */
+    /* ========================================= */
+    .contenedor-tarjeta-producto {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+        gap: 20px; /* Espacio entre tarjetas */
+    }
+
+    .articulo-tarjeta {
+        width: 100%; /* Cada tarjeta ocupa su celda */
+    }
+
+    .imagen-producto {
+        height: 180px; /* Imagen un poco más chica que en desktop */
+    }
+
+    .articulo-tarjeta h3 {
+        font-size: 18px;
+        margin: 16px 16px 8px 16px;
+    }
+
+    .descripcion-producto {
+        font-size: 14px;
+        margin: 0 16px 12px 16px;
+    }
+
+    .articulo-tarjeta ul {
+        font-size: 12px;
+        margin: 0 16px 16px 16px;
+        line-height: 18px;
+    }
+
+    .boton-tarjeta {
+        font-size: 13px;
+        padding: 8px 16px 16px 16px;
+    }   
+
+}
+
+
+/* ==========================================================================
+   3. CELULAR VERTICAL PEQUEÑO (Hasta 480px de ancho)
+   ========================================================================== */
+@media (max-width: 480px) {
+    /* OBJETIVO: Ajustes finos para pantallas muy angostas (300px - 480px).
+       Aquí achicas tipografías, reduces paddings al mínimo y aseguras 
+       que nada se salga de la pantalla (overflow). */
+    
+    /* Ejemplo:
+    .hero-titulo h1 { font-size: 32px; line-height: 40px; }
+    .boton-tarjeta { padding: 8px 16px; font-size: 13px; }
+    */
+}
