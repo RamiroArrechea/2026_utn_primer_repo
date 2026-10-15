@@ -31,7 +31,7 @@ let usuarios = [
 
 // BUSCAR POR ID
 function buscarUsuarioPorId(id_usuario){
-    for(indice=0; indice<usuarios.length; indice = indice + 1){
+    for(let indice=0; indice<usuarios.length; indice = indice + 1){
         if(usuarios[indice].id === id_usuario){
             return indice
         }
@@ -46,7 +46,7 @@ console.log('Id: El usuario esta en la posicion: ', lugar  + "de la lista")
 
 // BUSCAR POR EMAIL
 function buscarUsuarioPorEmail(email){
-    for(indice=0; indice<usuarios.length; indice = indice + 1){
+    for(let indice=0; indice<usuarios.length; indice = indice + 1){
         if(usuarios[indice].email === email){
             return indice
         }
@@ -60,7 +60,7 @@ console.log('Email: El usuario esta en la posicion: ', lugar2  + "de la lista")
 //
 // BUSCAR POR NOMBRE
 function buscarUsuarioPorNombre(nombre){
-    for(indice=0; indice<usuarios.length; indice = indice + 1){
+    for(let indice=0; indice<usuarios.length; indice = indice + 1){
         if(usuarios[indice].nombre === nombre){
             return indice
         }
@@ -78,7 +78,8 @@ console.log('Nombre: El usuario esta en la posicion: ', lugar3  + "de la lista")
 
     function eliminarUsuarioPorId(id_usuario) {
         usuarios.splice(id_usuario, 1);
-
+        //no se que retornar
+        //return ??
     }
 
     //Primero encuentro el indice a eliminar
