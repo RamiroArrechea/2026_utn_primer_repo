@@ -76,8 +76,8 @@ console.log('Nombre: El usuario esta en la posicion: ', lugar3  + "de la lista")
 {
     let nombreUsuario
 
-    function eliminarUsuarioPorId(id_usuario) {
-        usuarios.splice(id_usuario, 1);
+    function eliminarUsuarioPorId(indiceAElimminar) {
+        usuarios.splice(indiceAElimminar, 1);
         //no se que retornar
         //return ??
     }
@@ -88,5 +88,5 @@ console.log('Nombre: El usuario esta en la posicion: ', lugar3  + "de la lista")
     //luego llamo a la funcion eliminar
     eliminarUsuarioPorId(indiceAElimminar)
     console.log('Se elimino el usuario cuya posicion era la: ', indiceAElimminar  + "de la lista")
-
+indiceAElimminar 
 }
